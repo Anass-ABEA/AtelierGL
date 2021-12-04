@@ -83,6 +83,7 @@ public class Pet extends NamedEntity {
 		return this.owner;
 	}
 
+	// carefull from the protected method! it is protected :-)
 	protected void setOwner(Owner owner) {
 		this.owner = owner;
 	}
