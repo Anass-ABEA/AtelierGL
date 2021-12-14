@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/AtelierGL.iml" filepath="$PROJECT_DIR$/.idea/AtelierGL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-petclinic.iml" filepath="$PROJECT_DIR$/spring-petclinic.iml" />
     </modules>
   </component>
 </project>
