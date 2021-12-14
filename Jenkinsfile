@@ -1,6 +1,6 @@
-pipeline{
+pipeline {
     agent any
-    stages{
+    stages {
         stage('Clean'){
             steps{
                 sh '''
@@ -9,8 +9,8 @@ pipeline{
                 '''
             }
         }
-        stage ('Test'){
-            steps {
+        stage('Test'){
+            steps{
                 sh '''
                 echo "";
                 echo "[*] Starting tests..."
@@ -18,7 +18,7 @@ pipeline{
                 '''
             }
         }
-        stages ('Pacakge'){
+        stage('Package'){
             steps{
                 sh '''
                 echo "";
