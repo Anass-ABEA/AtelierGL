@@ -133,7 +133,7 @@
 
   <build>
     <plugins>
-      <plugin>
+      <!--<plugin>
         <groupId>io.spring.javaformat</groupId>
         <artifactId>spring-javaformat-maven-plugin</artifactId>
         <version>${spring-format.version}</version>
@@ -185,8 +185,8 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
         <executions>
           <execution>
-            <!-- Spring Boot Actuator displays build-related information
-              if a META-INF/build-info.properties file is present -->
+            &lt;!&ndash; Spring Boot Actuator displays build-related information
+              if a META-INF/build-info.properties file is present &ndash;&gt;
             <goals>
               <goal>build-info</goal>
             </goals>
@@ -221,9 +221,8 @@
         </executions>
       </plugin>
 
-
-      <!-- Spring Boot Actuator displays build-related information if a git.properties
-        file is present at the classpath -->
+      &lt;!&ndash; Spring Boot Actuator displays build-related information if a git.properties
+        file is present at the classpath &ndash;&gt;
       <plugin>
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
@@ -243,9 +242,7 @@
           <failOnNoGitDirectory>false</failOnNoGitDirectory>
           <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
         </configuration>
-      </plugin>
-
-
+      </plugin>-->
 
     </plugins>
   </build>
@@ -295,7 +292,7 @@
     </pluginRepository>
   </pluginRepositories>
 
-  <profiles>
+  <!--<profiles>
     <profile>
       <id>css</id>
       <build>
@@ -357,8 +354,8 @@
       <build>
         <pluginManagement>
           <plugins>
-            <!-- This plugin's configuration is used to store Eclipse m2e settings
-   only. It has no influence on the Maven build itself. -->
+            &lt;!&ndash; This plugin's configuration is used to store Eclipse m2e settings
+   only. It has no influence on the Maven build itself. &ndash;&gt;
             <plugin>
               <groupId>org.eclipse.m2e</groupId>
               <artifactId>lifecycle-mapping</artifactId>
@@ -413,6 +410,6 @@
         </pluginManagement>
       </build>
     </profile>
-  </profiles>
+  </profiles>-->
 
 </project>
