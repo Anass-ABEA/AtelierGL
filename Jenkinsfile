@@ -1,33 +1,31 @@
 pipeline {
-    agent any
-    stages {
-        stage('Clean'){
-            steps{
-                sh '''
-                echo "[*] Cleaning project..."
-                mvn clean
-                '''
-            }
-        }
-        stage('Test'){
-            steps{
-                sh '''
-                echo "";
-                echo "[*] Starting tests..."
-                mvn test
-                '''
-            }
-        }
-        stage('Package'){
-            steps{
-                sh '''
-                echo "";
-                echo [*] Packaging Project...;
-                mvn package
-                echo "";
-                echo [*] Pipleine Finished!;
-                '''
-            }
-        }
+  environment {
+    registry = "xcoderxcoder/petclinic_jenkinsfile"
+    registryCredential = 'xcoderxcoder'
+    dockerImage = ''
+  }
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        sh 'mvn clean install package'
+      }
     }
+    stage('Building image') {
+      steps {
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
+    }
+    stage('Deploy Image') {
+      steps {
+        script {
+          docker.withRegistry('', registryCredential) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
+  }
 }
