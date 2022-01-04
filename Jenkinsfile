@@ -13,14 +13,12 @@ pipeline {
     }
     stage('Building image') {
       steps {
-        script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
-        }
-      }
+				sh 'docker build -t xcoderxcoder/petclinic_jf:latest .'
+			}
     }
     stage('Deploy Image') {
       steps {
-          sh 'docker push bharathirajatut/nodeapp:latest'
+          sh 'docker push xcoderxcoder/petclinic_jf:latest'
       }
     }
   }
